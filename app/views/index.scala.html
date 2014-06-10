@@ -1,0 +1,35 @@
+
+
+@(equationForm: Form[Application.Equation])
+
+@import helper._
+
+@main(title = "Web App for Solving Equation") {
+    <h2>please you should provide this app with three parameters a,b and c</h2>
+    
+  
+        
+         @form(action = routes.Application.calculate, args = 'id -> "helloform") {
+        
+        @inputText(
+            field = equationForm("a"),
+            args = '_label -> "parameter a:", 'placeholder -> 0
+        )
+        
+        @inputText(
+            field = equationForm("b"),
+            args = '_label -> "parameter b:",  'placeholder -> 0
+        )
+        @inputText(
+            field = equationForm("c"),
+            args = '_label -> "parameter c:",  'placeholder -> 0
+        )   
+
+        
+        <p class="buttons">
+            <input type="submit" value="Go!">
+        <p>
+        
+        }
+
+}
